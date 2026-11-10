@@ -294,13 +294,6 @@ warn: CoreStartupService[0]
 
 改完 **2 秒内生效**，不用重启服务器，也不用重新注入。
 
-#### 原理
-
-两个 hook 点：
-
-1. `ws2_32!WSASendTo`（以及 `sendto` / `send` 兜底）——A2S 应答实际走 `WSASendTo`，这也是最初直接改 IAT 打不中的原因
-2. `ISteamGameServer015` vtable `+0x60` / `+0x68`——影响 Steam 客户端「Internet」列表显示的人数（仅 64 位服务端）
-
 #### 注意事项
 
 - **上限只是展示值**。真实进服容量仍由启动参数 `-maxPlayers` 决定。显示 `100/100` 但实际只配了 32 个位置时，第 33 个人进不来。
