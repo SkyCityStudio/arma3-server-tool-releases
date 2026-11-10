@@ -98,19 +98,18 @@
 
 > 为什么不能有中文：SteamCMD 在非 ASCII 路径上会静默失败，表现为「下载完成但目录是空的」。
 
-### 2. 双击 `start.cmd`
+### 2. 双击 `Arma3ServerTools.exe`
 
 ```
 D:\Arma3Tools\
-├─ Arma3ServerTools.Web.exe
-├─ start.cmd          ← 双击这个
+├─ Arma3ServerTools.exe   ← 双击这个（带图标，控制台里有菜单）
 ├─ appsettings.json
 ├─ extension\         ← steamcmd.exe 与统计扩展
 ├─ wwwroot\           ← 界面文件
 └─ ...
 ```
 
-会弹出一个黑色控制台窗口。**这个窗口就是服务本体，关掉它服务就停了**。
+会弹出一个控制台窗口，里面有菜单（打开界面 / 改端口 / 看日志 / 退出）。**这个窗口就是服务本体，关掉它服务就停了**。
 
 ### 3. 记下初始密码
 
@@ -383,7 +382,7 @@ set ARMA3_TOOLS_HOME=D:\Arma3ToolsData
 ## 常见问题
 
 <details>
-<summary><b>双击 start.cmd 闪一下就没了</b></summary>
+<summary><b>双击 exe 闪一下就没了</b></summary>
 
 端口被占用。检查 5080 是否已被别的程序（或另一个本工具实例）占用：
 
